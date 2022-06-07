@@ -1,0 +1,26 @@
+
+import mysql.connector
+
+# Informações do banco que estamos tentando conectar.
+conexao = mysql.connector.connect(
+    host='209.209.40.87',
+    port=19505,
+    user='Teste',
+    password='123456789',
+    database='BD_MACAW'
+)
+
+# Comando para facilitar indentificação da conexão com o BD
+if conexao.is_connected():
+    print('Conectado ao banco de dados!')
+
+# Temos de definir um objeto o qual iremos conduzir dentro da tabela,
+# fazendo nossos comandos (select e etc..)
+cursor = conexao.cursor()
+
+# Ação que o cursor irá realizar
+cursor.execute('')
+
+# Sempre que inicar uma conexão, é necessário fechá-la assim como o cursor.
+cursor.close()
+conexao.close()
